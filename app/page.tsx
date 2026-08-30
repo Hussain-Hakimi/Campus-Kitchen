@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { menuItems, type MenuItem } from "../data/menu";
 
-const BUSINESS_WHATSAPP_NUMBER = "93765222368";
+const BUSINESS_WHATSAPP_NUMBER = "923234524396";
 type CartItem = MenuItem & { quantity: number };
 const money = (value: number) => `${value.toLocaleString()} PKR`;
 
@@ -42,7 +42,7 @@ export default function Home() {
     if (!cart.length) return alert("Please add at least one food item to your order.");
     if (!name.trim() || !phone.trim() || !address.trim()) return alert("Please enter your name, phone number, and delivery address.");
     const lines = cart.map((item) => `${item.quantity} × ${item.name} — ${money(item.price * item.quantity)}`);
-    const message = ["Hello Campus Kitchen! 🍛", "", "I would like to place an order.", "", "Order:", ...lines, "", `Total: ${money(total)}`, "", `Customer Name: ${name.trim()}`, `Phone: ${phone.trim()}`, `Delivery Address: ${address.trim()}`, note.trim() ? `Note: ${note.trim()}` : "", "", "Thank you!"].filter(Boolean).join("\n");
+    const message = ["Hello Halal Biryani House! 🍛", "", "I would like to place an order.", "", "Order:", ...lines, "", `Total: ${money(total)}`, "", `Customer Name: ${name.trim()}`, `Phone: ${phone.trim()}`, `Delivery Address: ${address.trim()}`, note.trim() ? `Note: ${note.trim()}` : "", "", "Thank you!"].filter(Boolean).join("\n");
     window.open(`https://wa.me/${BUSINESS_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   }
 
@@ -50,17 +50,13 @@ export default function Home() {
     <main className="min-h-screen bg-brand-cream">
       <header className="sticky top-0 z-50 border-b border-orange-100/80 bg-brand-cream/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-          <a href="#home" className="flex items-center gap-3 font-bold text-brand-ink"><img src="/assets/logo.svg" alt="Campus Kitchen logo" className="h-11 w-auto max-w-[180px] object-contain" /></a>
+          <a href="#home" className="flex items-center gap-3 font-bold text-brand-ink"><img src="/assets/logo.svg" alt="Halal Biryani House logo" className="h-11 w-auto max-w-[180px] object-contain" /></a>
           <nav className="hidden items-center gap-7 text-sm font-semibold sm:flex"><a href="#home" className="hover:text-brand-orange">Home</a><a href="#menu" className="hover:text-brand-orange">Menu</a><a href="#reviews" className="hover:text-brand-orange">Reviews</a><a href="#contact" className="hover:text-brand-orange">Contact</a></nav>
           <a href="#order" className="rounded-full bg-brand-green px-4 py-2 text-sm font-bold text-white shadow-sm hover:opacity-90">Cart ({itemCount})</a>
         </div>
       </header>
 
-      {addedMessage && (
-        <div role="status" aria-live="polite" className="fixed left-1/2 top-20 z-[60] -translate-x-1/2 rounded-full bg-brand-green px-5 py-3 text-sm font-bold text-white shadow-lg">
-          ✓ {addedMessage}
-        </div>
-      )}
+      {addedMessage && <div role="status" aria-live="polite" className="fixed left-1/2 top-20 z-[60] -translate-x-1/2 rounded-full bg-brand-green px-5 py-3 text-sm font-bold text-white shadow-lg">✓ {addedMessage}</div>}
 
       <section id="home" className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 md:py-20">
         <div><div className="mb-5 inline-flex rounded-full bg-green-100 px-4 py-2 text-sm font-bold text-brand-green">🏠 Homemade • Fresh • Halal</div><h1 className="text-5xl font-black leading-tight tracking-tight sm:text-6xl">Fresh Homemade Food,<br /><span className="text-brand-orange">Made for You.</span></h1><p className="mt-5 max-w-xl text-lg leading-8 text-stone-600">Delicious homemade meals prepared fresh and delivered near your university.</p><a href="#menu" className="mt-7 inline-flex rounded-full bg-brand-orange px-7 py-3.5 font-bold text-white shadow-soft transition hover:-translate-y-0.5">View Menu ↓</a></div>
@@ -73,7 +69,7 @@ export default function Home() {
 
       <section id="reviews" className="mx-auto max-w-6xl px-4 py-12 sm:px-6"><div className="mb-8 text-center"><p className="font-bold text-brand-orange">CUSTOMER LOVE</p><h2 className="mt-1 text-3xl font-black sm:text-4xl">What customers say</h2><p className="mx-auto mt-3 max-w-2xl text-stone-500">Simple, homemade food and friendly service for our campus community.</p></div><div className="grid gap-5 md:grid-cols-3">{reviews.map((review) => <article key={review.name} className="rounded-3xl bg-white p-6 shadow-soft"><div className="text-lg tracking-wide" aria-label="5 stars">★★★★★</div><p className="mt-4 leading-7 text-stone-600">“{review.text}”</p><p className="mt-5 font-black text-brand-ink">{review.name}</p></article>)}</div></section>
 
-      <footer id="contact" className="mt-8 bg-brand-ink text-white"><div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-3"><div><div className="flex items-center gap-3 text-xl font-black"><img src="/assets/logo.svg" alt="Campus Kitchen" className="h-10 w-auto rounded-lg" /></div><p className="mt-3 text-sm leading-6 text-stone-300">Fresh homemade food, made for you and delivered near your university.</p></div><div><h3 className="font-bold">Contact</h3><p className="mt-3 text-sm text-stone-300">WhatsApp: +93 765 222 368</p><a href={`https://wa.me/${BUSINESS_WHATSAPP_NUMBER}`} target="_blank" rel="noreferrer" className="mt-3 inline-block font-bold text-green-300 hover:text-white">Chat on WhatsApp →</a></div><div><h3 className="font-bold">Opening Hours</h3><p className="mt-3 text-sm text-stone-300">Every day: 11:00 AM – 10:00 PM</p><p className="mt-2 text-sm text-stone-300">Location: Near your university</p></div></div><div className="border-t border-white/10 py-5 text-center text-xs text-stone-400">© {new Date().getFullYear()} Campus Kitchen. Homemade with care.</div></footer>
+      <footer id="contact" className="mt-8 bg-brand-ink text-white"><div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-3"><div><div className="flex items-center gap-3 text-xl font-black"><img src="/assets/logo.svg" alt="Halal Biryani House" className="h-10 w-auto rounded-lg" /></div><p className="mt-3 text-sm leading-6 text-stone-300">Fresh homemade food, made for you and delivered near your university.</p></div><div><h3 className="font-bold">Contact</h3><p className="mt-3 text-sm text-stone-300">WhatsApp: 03234524396</p><a href={`https://wa.me/${BUSINESS_WHATSAPP_NUMBER}`} target="_blank" rel="noreferrer" className="mt-3 inline-block font-bold text-green-300 hover:text-white">Chat on WhatsApp →</a></div><div><h3 className="font-bold">Opening Hours</h3><p className="mt-3 text-sm text-stone-300">Every day: 11:00 AM – 10:00 PM</p><p className="mt-2 text-sm text-stone-300">Location: Near your university</p></div></div><div className="border-t border-white/10 py-5 text-center text-xs text-stone-400">© {new Date().getFullYear()} Halal Biryani House. Homemade with care.</div></footer>
     </main>
   );
 }
