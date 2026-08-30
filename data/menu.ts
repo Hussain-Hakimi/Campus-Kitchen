@@ -7,21 +7,20 @@ export type MenuItem = {
   category: string;
 };
 
-// Edit this list to change Campus Kitchen's menu.
-// Replace the SVG files in public/assets with real JPG/PNG photos when available.
+// Edit this list to change the menu. Each image path must match a file in public/assets.
 export const menuItems: MenuItem[] = [
   {
     id: 1,
     name: "Chicken Biryani",
-    description: "Fresh homemade chicken biryani with fragrant rice and spices.",
-    price: 300 ,
-    image: "/assets/Chicken-Biryani.jpeg",
+    description: "Fragrant basmati rice layered with tender chicken, aromatic spices, and traditional biryani flavors.",
+    price: 300,
+    image: "/assets/Chiken-Biryani.jpeg",
     category: "Rice",
   },
   {
     id: 2,
     name: "Dal Chawal",
-    description: "Freshly cooked, fluffy rice prepared for a comforting meal.",
+    description: "Comforting lentil dal served with fluffy steamed rice, prepared in a simple homemade style.",
     price: 150,
     image: "/assets/Dal-Chawal.jpg",
     category: "Rice",
@@ -29,17 +28,17 @@ export const menuItems: MenuItem[] = [
   {
     id: 3,
     name: "Chicken Pulao",
-    description: "Tender chicken cooked with tomatoes, herbs, and traditional spices.",
+    description: "Aromatic pulao rice cooked with tender chicken, fragrant herbs, and traditional spices.",
     price: 350,
     image: "/assets/Chicken-Pulao.jpg",
-    category: "Chicken",
+    category: "Rice",
   },
   {
     id: 4,
     name: "Chana Polawo",
-    description: "Homestyle chicken curry with a rich, flavorful gravy.",
+    description: "Flavorful rice cooked with chickpeas, aromatic spices, and a delicious homemade touch.",
     price: 300,
     image: "/assets/Chana-Polawo.webp",
-    category: "Chicken",
+    category: "Rice",
   },
 ];
