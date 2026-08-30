@@ -64,9 +64,8 @@ export default function Home() {
     <main className="min-h-screen bg-brand-cream">
       <header className="sticky top-0 z-50 border-b border-orange-100/80 bg-brand-cream/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-          <a href="#home" className="flex items-center gap-2 font-bold text-brand-ink">
-            <span className="grid h-10 w-10 place-items-center rounded-2xl bg-brand-orange text-xl text-white shadow-sm">🍛</span>
-            <span className="text-lg">Campus Kitchen</span>
+          <a href="#home" className="flex items-center gap-3 font-bold text-brand-ink">
+            <img src="/assets/logo.svg" alt="Campus Kitchen logo" className="h-11 w-auto max-w-[180px] object-contain" />
           </a>
           <nav className="hidden items-center gap-7 text-sm font-semibold sm:flex">
             <a href="#home" className="hover:text-brand-orange">Home</a>
@@ -85,7 +84,7 @@ export default function Home() {
           <a href="#menu" className="mt-7 inline-flex rounded-full bg-brand-orange px-7 py-3.5 font-bold text-white shadow-soft transition hover:-translate-y-0.5">View Menu ↓</a>
         </div>
         <div className="relative overflow-hidden rounded-[2rem] shadow-soft">
-          <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1200&q=85" alt="Fresh homemade rice meal" className="h-[360px] w-full object-cover sm:h-[440px]" />
+          <img src="/assets/chicken-biryani.svg" alt="Fresh homemade chicken biryani" className="h-[360px] w-full object-cover sm:h-[440px]" />
           <div className="absolute bottom-5 left-5 rounded-2xl bg-white/95 px-4 py-3 shadow-lg"><p className="text-xs font-bold uppercase tracking-wider text-brand-green">Made fresh</p><p className="font-bold">Comfort food, close to campus.</p></div>
         </div>
       </section>
@@ -105,7 +104,7 @@ export default function Home() {
         <div className="rounded-3xl bg-brand-green p-6 text-white shadow-soft sm:p-8"><p className="font-bold text-green-100">CHECKOUT</p><h2 className="mt-1 text-3xl font-black">Send your order</h2><p className="mt-2 text-green-50">Fill in your details, then WhatsApp will open with your order ready to send.</p><div className="mt-6 space-y-3"><input value={name} onChange={(e) => setName(e.target.value)} placeholder="Customer name" className="w-full rounded-2xl border-0 px-4 py-3 text-brand-ink outline-none ring-2 ring-transparent focus:ring-orange-300" /><input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Phone number" type="tel" className="w-full rounded-2xl border-0 px-4 py-3 text-brand-ink outline-none ring-2 ring-transparent focus:ring-orange-300" /><textarea value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Delivery address" rows={3} className="w-full rounded-2xl border-0 px-4 py-3 text-brand-ink outline-none ring-2 ring-transparent focus:ring-orange-300" /><textarea value={note} onChange={(e) => setNote(e.target.value)} placeholder="Optional note" rows={2} className="w-full rounded-2xl border-0 px-4 py-3 text-brand-ink outline-none ring-2 ring-transparent focus:ring-orange-300" /><button onClick={orderOnWhatsApp} className="w-full rounded-2xl bg-white px-5 py-4 font-black text-brand-green shadow-lg hover:bg-orange-50">Order on WhatsApp →</button></div></div>
       </section>
 
-      <footer id="contact" className="mt-8 bg-brand-ink text-white"><div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-3"><div><div className="flex items-center gap-2 text-xl font-black"><span>🍛</span> Campus Kitchen</div><p className="mt-3 text-sm leading-6 text-stone-300">Fresh homemade food, made for you and delivered near your university.</p></div><div><h3 className="font-bold">Contact</h3><p className="mt-3 text-sm text-stone-300">WhatsApp: +93 765 222 368</p><a href={`https://wa.me/${BUSINESS_WHATSAPP_NUMBER}`} target="_blank" rel="noreferrer" className="mt-3 inline-block font-bold text-green-300 hover:text-white">Chat on WhatsApp →</a></div><div><h3 className="font-bold">Hours</h3><p className="mt-3 text-sm text-stone-300">11:00 AM – 10:00 PM</p><p className="mt-2 text-sm text-stone-300">Near your university</p></div></div><div className="border-t border-white/10 py-5 text-center text-xs text-stone-400">© {new Date().getFullYear()} Campus Kitchen. Homemade with care.</div></footer>
+      <footer id="contact" className="mt-8 bg-brand-ink text-white"><div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-3"><div><div className="flex items-center gap-3 text-xl font-black"><img src="/assets/logo.svg" alt="Campus Kitchen" className="h-10 w-auto rounded-lg" /></div><p className="mt-3 text-sm leading-6 text-stone-300">Fresh homemade food, made for you and delivered near your university.</p></div><div><h3 className="font-bold">Contact</h3><p className="mt-3 text-sm text-stone-300">WhatsApp: +93 765 222 368</p><a href={`https://wa.me/${BUSINESS_WHATSAPP_NUMBER}`} target="_blank" rel="noreferrer" className="mt-3 inline-block font-bold text-green-300 hover:text-white">Chat on WhatsApp →</a></div><div><h3 className="font-bold">Hours</h3><p className="mt-3 text-sm text-stone-300">11:00 AM – 10:00 PM</p><p className="mt-2 text-sm text-stone-300">Near your university</p></div></div><div className="border-t border-white/10 py-5 text-center text-xs text-stone-400">© {new Date().getFullYear()} Campus Kitchen. Homemade with care.</div></footer>
     </main>
   );
 }
