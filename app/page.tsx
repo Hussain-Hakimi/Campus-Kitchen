@@ -20,6 +20,7 @@ export default function Home() {
   const [address, setAddress] = useState("");
   const [note, setNote] = useState("");
   const [category, setCategory] = useState("All");
+  const [addedMessage, setAddedMessage] = useState("");
   const categories = ["All", ...Array.from(new Set(menuItems.map((item) => item.category)))];
   const filteredItems = category === "All" ? menuItems : menuItems.filter((item) => item.category === category);
   const total = useMemo(() => cart.reduce((sum, item) => sum + item.price * item.quantity, 0), [cart]);
@@ -31,6 +32,8 @@ export default function Home() {
       if (existing) return current.map((entry) => entry.id === item.id ? { ...entry, quantity: entry.quantity + 1 } : entry);
       return [...current, { ...item, quantity: 1 }];
     });
+    setAddedMessage(`${item.name} added to your cart.`);
+    window.setTimeout(() => setAddedMessage(""), 2500);
   }
   function changeQuantity(id: number, amount: number) {
     setCart((current) => current.map((item) => item.id === id ? { ...item, quantity: item.quantity + amount } : item).filter((item) => item.quantity > 0));
@@ -52,6 +55,12 @@ export default function Home() {
           <a href="#order" className="rounded-full bg-brand-green px-4 py-2 text-sm font-bold text-white shadow-sm hover:opacity-90">Cart ({itemCount})</a>
         </div>
       </header>
+
+      {addedMessage && (
+        <div role="status" aria-live="polite" className="fixed left-1/2 top-20 z-[60] -translate-x-1/2 rounded-full bg-brand-green px-5 py-3 text-sm font-bold text-white shadow-lg">
+          ✓ {addedMessage}
+        </div>
+      )}
 
       <section id="home" className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 md:py-20">
         <div><div className="mb-5 inline-flex rounded-full bg-green-100 px-4 py-2 text-sm font-bold text-brand-green">🏠 Homemade • Fresh • Halal</div><h1 className="text-5xl font-black leading-tight tracking-tight sm:text-6xl">Fresh Homemade Food,<br /><span className="text-brand-orange">Made for You.</span></h1><p className="mt-5 max-w-xl text-lg leading-8 text-stone-600">Delicious homemade meals prepared fresh and delivered near your university.</p><a href="#menu" className="mt-7 inline-flex rounded-full bg-brand-orange px-7 py-3.5 font-bold text-white shadow-soft transition hover:-translate-y-0.5">View Menu ↓</a></div>
