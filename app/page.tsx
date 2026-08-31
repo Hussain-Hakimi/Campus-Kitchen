@@ -9,9 +9,9 @@ type CartItem = MenuItem & { quantity: number };
 const money = (value: number) => `${value.toLocaleString()} PKR`;
 
 const reviews = [
-  { name: "University Student", text: "Fresh, tasty, and much better than expected. The biryani arrived warm and delicious!" },
-  { name: "Happy Customer", text: "Very convenient ordering through WhatsApp. The food felt homemade and the price was reasonable." },
-  { name: "Campus Customer", text: "Good portions, great taste, and friendly service. I would definitely order again." },
+  { name: "Hussain", text: "This biryani was so delicious! I'll always order again and again." },
+  { name: "Ali Khan", text: "The food was fresh, tasty, and full of flavor. I really enjoyed my meal and will definitely order again." },
+  { name: "Ahmed", text: "Great homemade taste, generous portions, and very friendly service. Highly recommended!" },
 ];
 
 export default function Home() {
