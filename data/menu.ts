@@ -12,7 +12,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 1,
     name: "Chicken Biryani",
-    description: "Fragrant basmati rice layered with tender chicken, aromatic spices, and traditional biryani flavors.",
+    description: "",
     price: 300,
     image: "/assets/Chiken-Biryani.jpeg",
     category: "Rice",
@@ -20,7 +20,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 2,
     name: "Dal Chawal",
-    description: "Comforting lentil dal served with fluffy steamed rice, prepared in a simple homemade style.",
+    description: "",
     price: 200,
     image: "/assets/Dal-Chawal.jpg",
     category: "Rice",
@@ -28,7 +28,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 3,
     name: "Chicken Pulao",
-    description: "Aromatic pulao rice cooked with tender chicken, fragrant herbs, and traditional spices.",
+    description: "",
     price: 300,
     image: "/assets/Chicken-Pulao.jpg",
     category: "Rice",
@@ -36,7 +36,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 4,
     name: "Chana Polawo",
-    description: "Flavorful rice cooked with chickpeas, aromatic spices, and a delicious homemade touch.",
+    description: "",
     price: 200,
     image: "/assets/Chana-Polawo.webp",
     category: "Rice",
